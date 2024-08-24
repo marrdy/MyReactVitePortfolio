@@ -1,5 +1,5 @@
 import React from 'react'
-import dp from '../assets/meDp.jpg'
+import dp from '../assets/meDP.jpg'
 function Home() {
   return (
     <div className=' text-white text-center py-16' id="Home">
