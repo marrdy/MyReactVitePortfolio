@@ -13,7 +13,7 @@ function Education() {
           <h3 className="text-xl font-semibold">Elementary School</h3>
           <p className="text-gray-600">Beatitudes technological and theological college - carmona </p>
           <p className="text-gray-500">2013</p>
-          <img src={Beatitude} className='w-80 h-80 md:w-60 md:h-60' />
+          <img src={Beatitude} className=' mx-auto w-80 h-80 md:w-60 md:h-60' />
         </div>
 
         <div className="bg-white shadow-md rounded-lg p-6 md:flex-1 mb-9">
@@ -21,7 +21,7 @@ function Education() {
           <p className="text-gray-600">Carmona National Highschool</p>
           <p className="text-gray-500">2017</p>
           <p className="text-gray-500">2013</p>
-          <img src={CNHS} className='w-80 h-80 md:w-60 md:h-60' />
+          <img src={CNHS} className='mx-auto w-80 h-80 md:w-60 md:h-60' />
         </div>
 
         <div className="bg-white shadow-md rounded-lg p-6 md:flex-1 mb-9">
@@ -29,7 +29,7 @@ function Education() {
           <p className="text-gray-600">STI Carmona</p>
           <p className="text-gray-500">2019</p>
           <p className="text-gray-500">2013</p>
-          <img src={sti} className='w-80 h-80 md:w-60 md:h-60' />
+          <img src={sti} className='mx-auto w-80 h-80 md:w-60 md:h-60' />
         </div>
 
         <div className="bg-white shadow-md rounded-lg p-6 md:flex-1 mb-9">
@@ -37,7 +37,7 @@ function Education() {
           <p className="text-gray-600">Earist G Cavite</p>
           <p className="text-gray-500">2024</p>
           <p className="text-gray-500">2013</p>
-          <img src={Earist} className='w-80 h-80 md:w-60 md:h-60' />
+          <img src={Earist} className='mx-auto w-80 h-80 md:w-60 md:h-60' />
         </div>
       </div>
     </div>
