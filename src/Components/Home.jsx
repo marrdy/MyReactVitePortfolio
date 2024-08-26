@@ -1,17 +1,22 @@
 import React from 'react'
-import dp from '../assets/meDP.jpg'
+import dp from '../assets/Metransparent.png'
 function Home() {
   return (
-    <div className=' text-white text-center py-16' id="Home">
-        <img src ={dp} className='border-red-500 border-8 mx-auto mb-8 w-60 h-60 rounded-full object-cover transform transition-transform duration-300 hover:scale-150'/>
-        <h1 className='text-4xl'>I'm{" "}
+    <div className=' bg-gray-300 text-black text-center py-16 mb-10 shadow-2xl shadow-red-500 -z-30  rounded-l-full' id="Home">
+
+        <h1 className='text-4xl z-50'>I'm{" "}
             <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-green-400 to-orange-400'>Marc Eddyson Cruz</span><br/>
         </h1>
-        <p className='m-4 text-lg text-yellow-300 text-1xl'>
-            I develop a diverse range of digital solutions, including games, websites, mobile applications, desktop software, and database systems.
-        </p>
+        <div className='flex'>
+
         <div>
-            <button className='shadow-md m-10 bg-gradient-to-r from-orange-800 to-yellow-600 text-white md:inline transform transition-transform duration-300 hover:scale-150 px-8 py-4 rounded-full flex items-center justify-center space-x-2'>
+            
+        </div>
+
+        </div>
+ 
+        <div className='z-50 '>
+            <button className='shadow-md bg-gradient-to-r from-orange-800 to-yellow-600 text-white md:inline transform transition-transform duration-300 hover:scale-150 px-8 py-4 rounded-full flex items-center justify-center space-x-2'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className='w-6 h-6 inline-block'>
                 <path strokeLinecap="round" strokeLinejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
                 </svg>

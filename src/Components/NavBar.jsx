@@ -1,25 +1,68 @@
-import React from 'react'
-const NavButtonFont = "text-white hover:text-yellow-400"
+import React, { useState } from 'react';
+import icon from '../assets/Icon.png';
+
+const NavButtonFont = "text-white hover:text-yellow-400";
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="shadow-md bg-red-800 text-white px-8 flex md:px-16 lg:px-24 fixed w-full top-0 left-0 z-10">
-        <div className='container py-2 flex justify-center md:justify-between items-center'>
-            <div className='text-2xl font-bold hidden md:inline'>
-                Marrdy
-            </div>
-            <div className='space-x-6'>
-                <a href="#Home" className={NavButtonFont}>Home</a>
-                <a href="#About-me" className={NavButtonFont}>About me</a>
-                <a href="#Education" className={NavButtonFont}>Education</a>
-                <a href="#Experience" className={NavButtonFont}>Experience</a>
-                <a href="#Skills" className={NavButtonFont}>Skills</a>
-            </div>
-            <button className='bg-gradient-to-r from-yellow-800 to-yellow-600 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>Contact me</button>
+    <nav className=" text-2xl shadow-md bg-red-800 text-white px-8 flex-grow md:px-16 lg:px-24 fixed w-full top-0 left-0 z-10">
+      <div className='container py-2 flex justify-between items-center'>
+        {/* Logo */}
+        <div className='text-2xl font-bold flex items-center'>
+          <img src={icon} alt="Icon" className='w-10 h-10' />
+          <h1 className='ml-2'>Marrdy</h1>
+        </div>
+
+        {/* Links (Hidden on small screens) */}
+        <div className='hidden md:flex space-x-6 '>
+          <a href="#Home" className={NavButtonFont}>Home</a>
+          <a href="#About-me" className={NavButtonFont}>About me</a>
+          <a href="#Education" className={NavButtonFont}>Education</a>
+          <a href="#Experience" className={NavButtonFont}>Experience</a>
+          <a href="#Skills" className={NavButtonFont}>Skills</a>
         </div>
 
 
+
+
+
+        <button
+          className='md:hidden text-white focus:outline-none'
+          onClick={toggleMenu}
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      {/* Slide-in Panel (Visible on small screens when the menu is open) */}
+      <div className={`fixed top-0 left-0 w-64 h-full bg-red-800 shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
+        <div className='flex justify-end p-4'>
+          <button
+            className='text-white focus:outline-none'
+            onClick={toggleMenu}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div className='flex flex-col items-start space-y-6 px-6'>
+          <a href="#Home" className={NavButtonFont} onClick={toggleMenu}>Home</a>
+          <a href="#About-me" className={NavButtonFont} onClick={toggleMenu}>About me</a>
+          <a href="#Education" className={NavButtonFont} onClick={toggleMenu}>Education</a>
+          <a href="#Experience" className={NavButtonFont} onClick={toggleMenu}>Experience</a>
+          <a href="#Skills" className={NavButtonFont} onClick={toggleMenu}>Contact me</a>
+        </div>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
