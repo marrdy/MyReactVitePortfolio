@@ -6,13 +6,13 @@ function AboutMe() {
     <div className='bg-transparent text-white text-left py-16' id="About-me">
 
         
-        <div className='flex'>
-          <div className='bg-transparent pb-96 w-full'>
-              <img src ={mypic} className='object-cover absolute bg-transparent  -z-10'/> 
+        <div className='md:flex'>
+          <div className='bg-transparent absolute md:static pb-96 w-full'>
+              <img src ={mypic} className='object-cover bg-transparent absolute -z-10 md:right-1/2 mt-44 md:mt-0 '/> 
           </div>
-          <div className='bg-transparent'>
+          <div className='bg-transparent mx-auto'>
           <Home/>
-          <div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5'>
+          <div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5 mt-20'>
           <h1 className='text-4xl text-black font-bold mb-8'>
              About me
           </h1>

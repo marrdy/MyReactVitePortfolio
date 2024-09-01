@@ -5,7 +5,7 @@ import sti from '../assets/STICarmona.png'
 import Earist from '../assets/EARIST.jpg'
 function Education() {
   return (
-    <div className=" bg-black mx-auto shadow-2xl p-8" id="Education z-50 "
+    <div className=" bg-black mx-auto shadow-2xl p-8 z-50 " id="Education"
     style={{
       boxShadow: '0 -10px 15px -3px rgba(1, 1, 1, 10)', // Custom top shadow
     }}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import icon from '../assets/Icon.png';
 
-const NavButtonFont = "text-white hover:text-yellow-400";
+const NavButtonFont = "text-white hover:text-yellow-400 hover:bg-red-900 p-5 w-full whitespace-nowrap";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +41,7 @@ const NavBar = () => {
         </button>
       </div>
 
-      {/* Slide-in Panel (Visible on small screens when the menu is open) */}
+      {/* navbar for mobile res*/}
       <div className={`fixed top-0 left-0 w-64 h-full bg-red-800 shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
         <div className='flex justify-end p-4'>
           <button
@@ -53,7 +53,8 @@ const NavBar = () => {
             </svg>
           </button>
         </div>
-        <div className='flex flex-col items-start space-y-6 px-6'>
+        <div className='flex flex-col items-start space-y-6 '>
+          
           <a href="#Home" className={NavButtonFont} onClick={toggleMenu}>Home</a>
           <a href="#About-me" className={NavButtonFont} onClick={toggleMenu}>About me</a>
           <a href="#Education" className={NavButtonFont} onClick={toggleMenu}>Education</a>
