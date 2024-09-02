@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import NavBar from './Components/NavBar'
-
+import { motion } from 'framer-motion';
 import Aboutme from './Components/AboutMe'
 import Edu from './Components/Education'
 import Exp from './Components/Experience'
 import bg from './assets/circuit-board.svg'
+import Skills from './Components/Skills'
 
 
 function App() {
@@ -18,13 +19,15 @@ function App() {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}
-    >
+    > 
       <NavBar/> 
-      <div className=''>
+      <div className='overflow-hidden'>
 
+        
         <Aboutme/>
         <Edu/>
         <Exp/>
+        <Skills/>
       </div>
 
     </div>

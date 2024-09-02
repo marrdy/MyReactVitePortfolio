@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import icon from '../assets/Icon.png';
-
+import { motion } from 'framer-motion';
 const NavButtonFont = "text-white hover:text-yellow-400 hover:bg-red-900 p-5 w-full whitespace-nowrap";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    
   };
 
   return (
-    <nav className=" text-2xl shadow-md bg-red-800 text-white px-8 flex-grow md:px-16 lg:px-24 fixed w-full top-0 left-0 z-10">
+    <motion.nav className=" 
+    text-2xl 
+    shadow-md 
+    bg-red-800 
+    text-white px-8 
+    flex-grow 
+    md:px-16 
+    lg:px-24 
+    fixed
+    w-full 
+    top-0 
+    left-0 
+    z-10"
+    animate={{y:0}}
+    initial={{y:"-100vw"}}
+    transition={{duration:2}}
+    >
       <div className='container py-2 flex justify-between items-center'>
         {/* Logo */}
         <div className='text-2xl font-bold flex items-center'>
@@ -62,7 +79,7 @@ const NavBar = () => {
           <a href="#Skills" className={NavButtonFont} onClick={toggleMenu}>Contact me</a>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
