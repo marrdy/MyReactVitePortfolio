@@ -37,11 +37,12 @@ const NavBar = () => {
 
         {/* Links (Hidden on small screens) */}
         <div className='hidden md:flex space-x-6 '>
-          <a href="#Home" className={NavButtonFont}>Home</a>
           <a href="#About-me" className={NavButtonFont}>About me</a>
           <a href="#Education" className={NavButtonFont}>Education</a>
           <a href="#Experience" className={NavButtonFont}>Experience</a>
           <a href="#Skills" className={NavButtonFont}>Skills</a>
+          <a href="#Q&A" className={NavButtonFont}>Q&A</a>
+          <a href="#Gallery" className={NavButtonFont}>Gallery</a>
         </div>
 
 

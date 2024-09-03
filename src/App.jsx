@@ -12,8 +12,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='  absolute -z-50 flex-grow' 
-    style={{
+    <div>
+          < motion.div className='fixed w-full h-full bg-black z-10 justify-center' animate={{opacity:0,visibility:'hidden'}} transition={{duration:1.5}}>
+
+    </motion.div>
+      <div className='  absolute -z-50 flex-grow' 
+      style={{
       backgroundImage: `url(${bg})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -31,6 +35,8 @@ function App() {
       </div>
 
     </div>
+    </div>
+
            
 
         

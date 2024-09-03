@@ -6,17 +6,17 @@ function AboutMe() {
   const {scrollY} = useScroll();
   return (
     <div className='bg-transparent text-white text-left py-16' id="About-me">
-        <div className='md:flex'    initial={{x:"100vw"}} whileInView={{x:0}}>
+        <div className='md:flex '   initial={{x:"100vw"}}>
           <div className='bg-transparent absolute md:static pb-96 w-full'>
-              <motion.img src ={mypic} initial={{x:"-100vw"}} animate={{x:0}} transition={{duration:3, delay:1}} className='object-cover bg-transparent absolute -z-10 md:right-1/2 mt-44 md:mt-0 '/> 
+              <motion.img src ={mypic} initial={{x:"-100vw",opacity:0}} animate={{x:0,opacity:1}} transition={{duration:3, delay:1}} className='object-cover bg-transparent absolute -z-10 md:right-1/2 mt-44 md:mt-0 '/> 
           </div>
-          <div className='bg-transparent mx-auto'>
+          <div className='bg-transparent mx-auto space-y-64'>
           <Home/>
-            <motion.div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5 mt-20' initial={{opacity:0}} animate={{opacity:10}} transition={{delay:2}} >
+          <motion.div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5 '   initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} >
               <h1 className='text-4xl text-black font-bold mb-8'>
                 About me 
               </h1>
-              <div className='bg-transparent text-gray-700' >
+              <motion.div className='bg-transparent text-gray-700'  initial={{ x: 100,opacity:0 }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:2, delay:1}}>
                     <p className='justify-center leading-relaxed text-1xl  text-1xl text-ellipsis md:text-3xl'>
                     My name is Marc Eddyson, I recently 
                     </p>
@@ -29,7 +29,7 @@ function AboutMe() {
                     <p className='leading-relaxed m-1 text-1xl  text-1xl text-ellipsis md:text-1xl mb-10'>
                     I am committed to delivering results that not only meet but exceed expectations.
                     </p>
-              </div>
+              </motion.div>
           </motion.div>
 
           </div>
