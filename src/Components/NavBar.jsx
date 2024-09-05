@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import icon from '../assets/Icon.png';
 import { motion } from 'framer-motion';
 const NavButtonFont = "text-white hover:text-yellow-400 hover:bg-red-900 p-5 w-full whitespace-nowrap";
@@ -9,12 +9,40 @@ const NavBar = () => {
     setIsOpen(!isOpen);
     
   };
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down, hide the navbar
+        setShowNavbar(false);
+      } else {
+        // if scroll up, show the navbar
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
 
   return (
     <motion.nav className=" 
     text-2xl 
     shadow-md 
+    backdrop-blur-md
     bg-red-800 
+    bg-opacity-60
     text-white px-8 
     flex-grow 
     md:px-16 
@@ -24,9 +52,9 @@ const NavBar = () => {
     top-0 
     left-0 
     z-10"
-    animate={{y:0}}
-    initial={{y:"-100vw"}}
-    transition={{duration:2}}
+    initial={{ y: 0 }}
+    animate={{ y: showNavbar ? 0 : '-100%' }}
+    transition={{ type: '', velocity: 2 }}
     >
       <div className='container py-2 flex justify-between items-center'>
         {/* Logo */}
@@ -40,7 +68,6 @@ const NavBar = () => {
           <a href="#About-me" className={NavButtonFont}>About me</a>
           <a href="#Education" className={NavButtonFont}>Education</a>
           <a href="#Experience" className={NavButtonFont}>Experience</a>
-          <a href="#Skills" className={NavButtonFont}>Skills</a>
           <a href="#Q&A" className={NavButtonFont}>Q&A</a>
           <a href="#Gallery" className={NavButtonFont}>Gallery</a>
         </div>

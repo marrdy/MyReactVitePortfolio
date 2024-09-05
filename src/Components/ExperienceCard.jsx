@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
-
-const ExperienceCard = ({ title, experiences }) => {
+import React, { useState, useEffect } from 'react'; 
+import Icon from "./IconLoader"
+const images = import.meta.glob('/src/assets/Icons/*.{png,jpg,svg}');
+const ExperienceCard = ({ title, experiences ,image}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-  };
 
+  };
+  const [imageElements, setImageElements] = useState([]);
+
+  useEffect(() => {
+      const loadImages = async () => {
+          const loadedImages = await Promise.all(
+              Object.keys(images).map(async (path) => {
+                  const src = await images[path]();
+                  return { name: path.split('/').pop(), src };
+              })
+          );
+          setImageElements(loadedImages);
+      };
+
+      loadImages();
+  }, [])
   return (
     <div className=" max-w-sm mx-auto  bg-white shadow-lg rounded-lg p-6 my-4" id="Experience">
       {/* Title Section */}
@@ -27,12 +43,13 @@ const ExperienceCard = ({ title, experiences }) => {
             <div key={index}>
               <h4 className="text-xl font-bold text-gray-700">{experience.name}</h4>
               <p className="text-gray-600">{experience.details}</p>
+              <Icon filename={image}/>
             </div>
           ))}
         </div>
       )}
     </div>
   );
-};
+}; 
 
 export default ExperienceCard;

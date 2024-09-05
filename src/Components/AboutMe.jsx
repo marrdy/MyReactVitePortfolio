@@ -12,7 +12,7 @@ function AboutMe() {
           </div>
           <div className='bg-transparent mx-auto space-y-64'>
           <Home/>
-          <motion.div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5 '   initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} >
+          <motion.div className='bg-gray-300 shadow-2xl shadow-red-400 rounded-md py-10 px-5 '   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:2}}>
               <h1 className='text-4xl text-black font-bold mb-8'>
                 About me 
               </h1>

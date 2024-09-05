@@ -15,7 +15,7 @@ function Home() {
         }
     }
     return (
-        <motion.div className='flex justify-end'>
+        <motion.div className='flex justify-end mt-12'>
 
             <div className={isOpen ? 'fixed inset-0 w-full h-full z-50' : 'hidden'}>
             {isOpen && (
@@ -25,7 +25,7 @@ function Home() {
             </div>
 
             <motion.div animate={{x:0}} transition={{duration:2}} initial={{x:"100vw"}}
-                className="text-black text-center md:mb-10 md:shadow-2xl space-y-80 md:space-y-0 shadow-red-500 rounded-l-full w-max bg-transparent md:bg-gray-300"
+                className="text-black px-12 text-center md:mb-10 md:shadow-2xl space-y-80 md:space-y-0 shadow-red-500 rounded-l-full w-max bg-transparent md:bg-gray-300"
                 id="Home"
             >
                 

@@ -1,7 +1,20 @@
 import React from 'react'
 import SkillRate from './Skillset'
-
+import IconLoader from './IconLoader';
 export default function Skills() {
+  const Exps = {
+    "csharp.png": { name: "C#" },
+    "godot.png": { name: "Godot" },
+    "jscript.png": { name: "JScript" },
+    "react.svg": { name: "React" },
+    "java.png": { name: "java" },
+    "Mssql.svg": { name: "MS sql" },
+    "mysql.png": { name: "Mysql" },
+    "PHP.png": { name: "PHP" },
+    "Xamarin.png": { name: "Xamarin" },
+    "unity.png": { name: "Unity" },
+    "vb.png": { name: "Visual basic .NET" },
+  };
 
   const skillsInfo = [
     {
@@ -57,8 +70,24 @@ export default function Skills() {
 
   return (
     <div className='p-16 bg-black flex-col space-y-14' id="Skills">
-      <h1 className="text-4xl font-bold text-center text-white mb-6">Skills</h1>
-
+      <h1 className="text-4xl font-bold text-center text-white mb-6">Skills & knowledge</h1>
+      <div className="bg-black py-10">
+            <div className="flex flex-wrap justify-center gap-6">
+                {
+                    // Loop through the Exps object using Object.entries()
+                    Object.entries(Exps).map(([filename, details], index) => (
+                        <div 
+                            key={index} 
+                            className="w-48 h-60 bg-white rounded-lg flex flex-col items-center p-5 justify-center p-4"
+                        >
+                            {/* Pass filename to IconLoader */}
+                            <IconLoader filename={filename} />
+                            <h1 className="text-stale-100 mt-4 text-2xl font-bold">{details.name}</h1>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
       {skillsInfo.map((item, index) => (
         <div key={index}>
           <SkillRate title={item.title} rate={item.rate} proficiencyLevel={item.proficiencyLevel} description={item.description} opinion={item.opinion} />

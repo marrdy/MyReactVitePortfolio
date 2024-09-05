@@ -3,9 +3,9 @@ import NavBar from './Components/NavBar'
 import { motion } from 'framer-motion';
 import Aboutme from './Components/AboutMe'
 import Edu from './Components/Education'
-import Exp from './Components/Experience'
 import bg from './assets/circuit-board.svg'
 import Skills from './Components/Skills'
+import QnA from './Components/QNA'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           < motion.div className='fixed w-full h-full bg-black z-10 justify-center' animate={{opacity:0,visibility:'hidden'}} transition={{duration:1.5}}>
 
     </motion.div>
-      <div className='  absolute -z-50 flex-grow' 
+      <div className='absolute -z-50 flex-grow' 
       style={{
       backgroundImage: `url(${bg})`,
       backgroundRepeat: 'no-repeat',
@@ -26,12 +26,10 @@ function App() {
     > 
       <NavBar/> 
       <div className='overflow-hidden'>
-
-        
         <Aboutme/>
         <Edu/>
-        <Exp/>
         <Skills/>
+        <QnA/>
       </div>
 
     </div>
