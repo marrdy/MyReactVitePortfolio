@@ -18,7 +18,7 @@ function App() {
     </motion.div>
       <div className='absolute -z-50 flex-grow' 
       style={{
-      backgroundImage: `url(${bg})`,
+      backgroundImage: ` url('src/assets/circuit-board.svg')`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
