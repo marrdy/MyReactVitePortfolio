@@ -2,60 +2,65 @@ import React, { useState } from 'react';
 import Contacttab from './Contact';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from "react-type-animation";
+
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const openContact = () => setIsOpen(true);
-    const closeContact = () => {setIsOpen(false)};
+    const closeContact = () => { setIsOpen(false) };
+
     const defaultAnimations = {
-        hidden : {
-            opacity:0
+        hidden: {
+            opacity: 0
         },
-        visible:{
-            opacity:1
+        visible: {
+            opacity: 1
         }
-    }
+    };
+
     return (
         <motion.div className='flex justify-end mt-12'>
-
             <div className={isOpen ? 'fixed inset-0 w-full h-full z-50' : 'hidden'}>
-            {isOpen && (
-                
-                <Contacttab onClose={closeContact} />
-            )}
+                {isOpen && (
+                    <Contacttab onClose={closeContact} />
+                )}
             </div>
 
-            <motion.div animate={{x:0}} transition={{duration:2}} initial={{x:"100vw"}}
+            <motion.div animate={{ x: 0 }} transition={{ duration: 2 }} initial={{ x: "100vw" }}
                 className="text-black px-12 text-center md:mb-10 md:shadow-2xl space-y-80 md:space-y-0 shadow-red-500 rounded-l-full w-max bg-transparent md:bg-gray-300"
                 id="Home"
             >
-                
                 <h1 className="text-gray-500 ml-32 text-2xl text-right md:text-4xl md:mb-0 md:mt-0 rounded-l-full md:bg-transparent bg-white p-8">
                     I'm{" "}
-                    <motion.span  className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible"transition={{ staggerChildren:0.4,delayChildren:3}} aria-hidden>
-                        {"Marc ".split("").map((char)=>(
-                            <motion.span variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">{char}</motion.span>)
+                    <motion.span className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible" transition={{ staggerChildren: 0.4, delayChildren: 3 }} aria-hidden>
+                        {"Marc ".split("").map((char, index) => (
+                            <motion.span key={index} variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">
+                                {char}
+                            </motion.span>)
                         )}
                     </motion.span >
-                    <motion.span  className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible"transition={{ staggerChildren:0.4}} aria-hidden>
-                        {"Eddyson".split("").map((char)=>(
-                            <motion.span variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">{char}</motion.span>)
+                    <motion.span className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible" transition={{ staggerChildren: 0.4 }} aria-hidden>
+                        {"Eddyson".split("").map((char, index) => (
+                            <motion.span key={index} variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">
+                                {char}
+                            </motion.span>)
                         )}
                     </motion.span >
-                    <motion.span  className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible"transition={{ staggerChildren:0.4}} aria-hidden>
-                        {" V Cruz".split("").map((char)=>(
-                            <motion.span variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">{char}</motion.span>)
+                    <motion.span className="text-transparent font-bold bg-clip-text bg-black" initial="hidden" animate="visible" transition={{ staggerChildren: 0.4 }} aria-hidden>
+                        {" V Cruz".split("").map((char, index) => (
+                            <motion.span key={index} variants={defaultAnimations} className="text-transparent font-bold bg-clip-text bg-black">
+                                {char}
+                            </motion.span>)
                         )}
                     </motion.span >
                     <br />
-                    
+
                     <TypeAnimation
-                    sequence={["Web Dev", 1000, "Mobile Dev", 1000, "Game Dev", 1000]}
-                     speed={50}
-                     repeat={Infinity}
-                    
-                     />
+                        sequence={["Web Dev", 1000, "Mobile Dev", 1000, "Game Dev", 1000]}
+                        speed={50}
+                        repeat={Infinity}
+                    />
                 </h1>
-                
+
                 <div className=" bg-transparent md:bg-transparent p-10">
                     <div className="flex space-x-9 justify-center ">
                         <button
@@ -75,7 +80,6 @@ function Home() {
                                     d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
                                 />
                             </svg>
-
                             <span className="inline-block">My resume</span>
                         </button>
                         <button

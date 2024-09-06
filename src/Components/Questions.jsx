@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function Questions() {
+const Questions = ({ ques, Ans}) =>{
   const [Show, SetShow] = useState(false);
 
   const ToggleShow = () => {
@@ -9,10 +9,10 @@ function Questions() {
   };
 
   return (
-    <div className='bg-white rounded-md m-10 p-10'>
+    <div className='bg-white text-3xl rounded-md  '>
       <div className='flex'>
         <div className='500 w-full'>
-          <h1>When did you start programming and what is your first language?</h1>
+          <h1>{ques}</h1>
         </div>
         <div>
           <motion.button
@@ -36,20 +36,17 @@ function Questions() {
         </div>
       </div>
 
-      <AnimatePresence>
+      
         {Show && (
           <motion.div
-            initial={{   height: 0 ,opacity:0}}
-            animate={{ height: "auto" ,opacity:1}}
-            exit={{  height: 0  ,opacity:0}}
-            className='bg-white rounded-md text-2xl max-w-full'
+
           >
-            <p className='break-words overflow-wrap-normal'>
-            Object-Oriented Programming is a programming paradigm based on the concept of 'objects,' which can contain data and code. OOP languages like Java, C++, and Python enable developers to create modular, reusable code. The four key principles of OOP are encapsulation, inheritance, polymorphism, and abstraction. OOP is widely used for building complex, scalable software systems.
+            <p className='break-words overflow-wrap-normal text-base'>
+            {Ans}
             </p>
           </motion.div>
         )}
-      </AnimatePresence>
+     
     </div>
   );
 }
