@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Contacttab from './Contact';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from "react-type-animation";
+import Resume from '../../public/Resume.pdf'
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,9 @@ function Home() {
 
                 <div className=" bg-transparent md:bg-transparent p-10">
                     <div className="flex space-x-9 justify-center ">
-                        <button
+                        <a href={Resume}
+                           download="Resume">
+                            <button
                             className="shadow-md bg-gradient-to-r from-red-800 to-green-900 font-extrabold text-white md:inline transform hover:scale-110 px-8 py-4 rounded-full flex items-center justify-center space-x-2"
                         >
                             <svg
@@ -82,6 +85,7 @@ function Home() {
                             </svg>
                             <span className="inline-block">My resume</span>
                         </button>
+                        </a>
                         <button
                             onClick={openContact}
                             className="shadow-md bg-gradient-to-r from-red-800 to-green-600 font-extrabold text-white md:inline transform hover:scale-110 px-8 py-4 rounded-full flex items-center justify-center space-x-2"

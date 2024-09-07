@@ -33,6 +33,10 @@ export default function QNA() {
     {
       ques: "What motivates you to succeed in your programming career?",
       ans: "I’m driven by the satisfaction of solving complex problems and creating efficient, user-friendly applications. The continuous learning aspect of programming, where there’s always a new tool or technology to master, keeps me motivated and excited about the field."
+    },
+    {
+      ques: "What tools did you use to create this portfolio?",
+      ans: "I built this portfolio using React and Vite as the primary framework for fast development and efficient performance. For animations, I implemented Framer Motion, which allowed me to create smooth and dynamic transitions. Tailwind CSS was used for styling, providing a streamlined approach to responsive and customizable design. Additionally, I incorporated React Icons to easily add visually appealing icons, enhancing the overall user interface and experience. I started making this portfolio since August 21 2024 and officially deplpoyed in github for you to see."
     }
   ];
   return (

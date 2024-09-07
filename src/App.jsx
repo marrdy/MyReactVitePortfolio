@@ -6,6 +6,7 @@ import Edu from './Components/Education'
 import bg from './assets/circuit-board.svg'
 import Skills from './Components/Skills'
 import QnA from './Components/QNA'
+import Footer from './Components/footer'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Edu/>
         <Skills/>
         <QnA/>
+        <Footer/>
       </div>
 
     </div>
