@@ -37,10 +37,10 @@ function Education() {
 
       <div className="md:flex md:gap-4 mb-9">
         { educationData.map((Educ, index) => (
-          <div className="bg-white shadow-md rounded-lg p-6 md:flex-1 mb-9" key={index}>
-            <h3 className="text-xl font-semibold">{Educ.level}</h3>
-            <p className="text-gray-600">{Educ.school}</p>
-            <p className="text-gray-500"> SY Graduated :{Educ.year}</p>
+          <div className="bg-slate-900 shadow-md rounded-lg p-6 md:flex-1 mb-9" key={index}>
+            <h3 className="text-slate-100 text-xl font-semibold">{Educ.level}</h3>
+            <p className="text-slate-300">{Educ.school}</p>
+            <p className="text-slate-300"> SY Graduated :{Educ.year}</p>
 
             <Icon filename={Educ.image}/>
           </div>

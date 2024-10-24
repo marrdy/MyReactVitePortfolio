@@ -9,10 +9,10 @@ const Questions = ({ ques, Ans}) =>{
   };
 
   return (
-    <div className='bg-white text-3xl rounded-md  '>
+    <div className='bg-slate-900 text-3xl rounded-md  '>
       <div className='flex'>
         <div className='500 w-full'>
-          <h1>{ques}</h1>
+          <h1 className='text-slate-300'>{ques}</h1>
         </div>
         <div>
           <motion.button
@@ -41,7 +41,7 @@ const Questions = ({ ques, Ans}) =>{
           <motion.div
 
           >
-            <p className='break-words overflow-wrap-normal text-base'>
+            <p className='break-words overflow-wrap-normal text-base text-slate-300'>
             {Ans}
             </p>
           </motion.div>

@@ -39,9 +39,9 @@ const NavBar = () => {
   return (
     <motion.nav className=" 
     text-2xl 
-    shadow-md 
+    shadow-xl
     backdrop-blur-md
-    bg-red-800 
+    bg-slate-900
     bg-opacity-60
     text-white px-8 
     flex-grow 
@@ -51,12 +51,14 @@ const NavBar = () => {
     w-full 
     top-0 
     left-0 
-    z-10"
+    z-10
+    shadow-red-700"
+    
     initial={{ y: 0 }}
-    animate={{ y: showNavbar ? 0 : '-100%' }}
+    animate={{ y: showNavbar ? 0 : '-200%' }}
     transition={{ type: '', velocity: 2 }}
     >
-      <div className='container py-2 flex justify-between items-center'>
+      <div className='container flex justify-between items-center'>
         {/* Logo */}
         <div className='text-2xl font-bold flex items-center'>
           <img src={icon} alt="Icon" className='w-10 h-10' />
@@ -88,7 +90,7 @@ const NavBar = () => {
 
       {/* navbar for mobile res*/}
       <div className={`fixed top-0 left-0 w-64 h-full bg-red-800 shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
-        <div className='flex justify-end p-4'>
+        <div className='flex justify-end p-4 bg-red-900'>
           <button
             className='text-white focus:outline-none'
             onClick={toggleMenu}
@@ -98,7 +100,7 @@ const NavBar = () => {
             </svg>
           </button>
         </div>
-        <div className='flex flex-col items-start space-y-6 '>
+        <div className='flex flex-col items-start space-y-6 bg-red-900'>
           
           <a href="#Home" className={NavButtonFont} onClick={toggleMenu}>Home</a>
           <a href="#About-me" className={NavButtonFont} onClick={toggleMenu}>About me</a>

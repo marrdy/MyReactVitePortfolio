@@ -7,7 +7,7 @@ import bg from './assets/circuit-board.svg'
 import Skills from './Components/Skills'
 import QnA from './Components/QNA'
 import Footer from './Components/footer'
-
+import Gallery from './Components/Gallery'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,11 +26,12 @@ function App() {
     }}
     > 
       <NavBar/> 
-      <div className='overflow-hidden'>
+      <div className='overflow-hidden '>
         <Aboutme/>
         <Edu/>
         <Skills/>
         <QnA/>
+        <Gallery/>
         <Footer/>
       </div>
 

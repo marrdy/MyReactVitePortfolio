@@ -69,30 +69,33 @@ export default function Skills() {
   ];
 
   return (
-    <div className='p-16 bg-black flex-col space-y-14' id="Skills">
-      <h1 className="text-4xl font-bold text-center text-white mb-6">Skills & knowledge</h1>
-      <div className="bg-black py-10">
-            <div className="flex flex-wrap justify-center gap-6">
+    <div className=' bg-black flex-col' id="Skills">
+      <h1 className="text-4xl font-bold text-center text-white">Skills & knowledge</h1>
+      <div className=" py-10">
+            <div className="flex flex-wrap justify-center gap-6 ">
                 {
                     // Loop through the Exps object using Object.entries()
                     Object.entries(Exps).map(([filename, details], index) => (
                         <div 
                             key={index} 
-                            className="w-48 h-60 bg-white rounded-lg flex flex-col items-center p-5 justify-center p-4"
+                            className="w-48 h-60 bg-slate-900 rounded-lg flex flex-col items-center justify-center p-4"
                         >
                             {/* Pass filename to IconLoader */}
                             <IconLoader filename={filename} />
-                            <h1 className="text-stale-100 mt-4 text-2xl font-bold">{details.name}</h1>
+                            <h1 className="text-slate-100 mt-4 text-2xl font-bold">{details.name}</h1>
                         </div>
                     ))
                 }
             </div>
         </div>
-      {skillsInfo.map((item, index) => (
+        <div  className='space-y-7'>
+        {skillsInfo.map((item, index) => (
         <div key={index}>
           <SkillRate title={item.title} rate={item.rate} proficiencyLevel={item.proficiencyLevel} description={item.description} opinion={item.opinion} />
         </div>
       ))}
+        </div>
+
     </div>
   )
 }

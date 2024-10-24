@@ -14,8 +14,8 @@ function Contact({ onClose }) {
     };
 
     return (
-        < motion.div className='fixed inset-0 flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 z-50' animate={{x:0}} initial={{x:-100}}>
-            <div className='bg-white rounded-2xl p-10'>
+        < motion.div className='fixed inset-0 flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 z-50'>
+            <motion.div className='bg-white rounded-2xl p-10'  animate={{x:0}} initial={{x:-100}}>
                 <div className='flex justify-between items-center mb-10'>
                     <motion.h1 className='text-2xl text-gray-900' animate={{x:100}} initial={{x:-100}}>Contact me through:</motion.h1>
                     <button
@@ -66,7 +66,7 @@ function Contact({ onClose }) {
                         copyTextToClipboard('Cruz.marceddyson.eccbscs@gmail.com');
                     }} className='text-2xl text-sky-600 underline'>Cruz.marceddyson.eccbscs@gmail.com</a>
                 </h1>
-            </div>
+            </motion.div>
         </motion.div>
     );
 }

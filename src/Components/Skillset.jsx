@@ -16,7 +16,7 @@ const Skillset = ({ title, rate, description,opinion,proficiencyLevel }) => {
     }
   };
   return (
-    <div className='text-gray-700 font-bold rounded-xl bg-white p-11'>
+    <div className='mx-10 text-white font-bold rounded-xl bg-slate-900 p-11'>
       <div className="flex-col items-center space-y-9">
         <label htmlFor="htmlandcss" className="w-2/12 text-2xl ">
           {title} - <span className={`w-2/12 text-2xl ${getTextColor(proficiencyLevel)}`}>{proficiencyLevel}</span>

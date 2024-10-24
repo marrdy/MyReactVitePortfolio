@@ -24,7 +24,7 @@ const ExperienceCard = ({ title, experiences ,image}) => {
       loadImages();
   }, [])
   return (
-    <div className=" max-w-sm mx-auto  bg-white shadow-lg rounded-lg p-6 my-4" id="Experience">
+    <div className=" max-w-sm mx-auto  bg-slate-900 shadow-lg rounded-lg p-6 my-4" id="Experience">
       {/* Title Section */}
       <h3 className="text-2xl font-semibold text-gray-800">{title}</h3>
       

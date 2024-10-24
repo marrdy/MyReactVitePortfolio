@@ -40,18 +40,19 @@ export default function QNA() {
     }
   ];
   return (
-    <div className='bg-black p-10' id="Q&A">
+    <div className='bg-black py-16' id="Q&A">
       <div>
-        <h1 className="text-4xl font-bold text-center text-white mb-6">
+        <h1 className="text-4xl font-bold text-center text-white pb-9">
           Q&A
         </h1>
       </div>
+      <div className='space-y-7 mx-10'>
       { QuestionsList.map((qa, index) => (
-          <div className="bg-white shadow-md rounded-lg p-6 md:flex-1 mb-9" key={index}>
+          <div className="bg-slate-900 shadow-md rounded-lg p-6 md:flex-1" key={index}>
             <Question ques={qa.ques} Ans={qa.ans}/>
           </div>
         ))}
-
+      </div>
 
     </div>
     
