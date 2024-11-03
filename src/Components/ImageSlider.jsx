@@ -49,7 +49,7 @@ const ImageSlider = forwardRef(({ slides, close }, ref) => {
         animate={{ scale: 1 }}
         exit={{ scale: 0 }}
       >
-        <img src={`src/GalleryImages/${slides[currentIndex].url}`} className="items-center" alt={slides[currentIndex].title} />
+        <img src={`src/GalleryImages/${slides[currentIndex].url}`} className="max-w-2xl" alt={slides[currentIndex].title} />
         <div className="flex justify-center">
           {slides.map((slide, slideIndex) => (
             <div

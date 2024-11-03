@@ -115,7 +115,7 @@ function Home() {
 
               <motion.img src ={mypic} initial={{x:"-100vw",opacity:0}} animate={{x:0,opacity:1}} transition={{duration:1, delay:1}} className=' inset-0 -z-10 h-full w-full bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#63e_100%)]'/> 
           </div>
-            <motion.div className='bg-slate-900 shadow-2xl shadow-red-700 rounded-md py-10 px-5 z-10'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
+            <motion.div className='bg-slate-900 shadow-2xl shadow-red-700 rounded-md py-10 px-5 z-10 overflow-hidden ml-20'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
               <h1 className='text-4xl text-slate-400 font-bold mb-8'>
                 About me 
               </h1>

@@ -10,7 +10,10 @@ function Gallery() {
   const imagesList = [
     { title: "Profriends Job Order VB.NET", url: "ProfriendsMotorPoolJobOrders.jpg" },
     { title: "Thesis Book bind title: Ballgorithm.", url: "thesisSoftBindDone.jpg" },
-    { title: "Ballgorithm.", url: "BallgorithmMainMenu.jpg" },
+    { title: "Certificate of recognition on Best in OJT.", url: "bestOJT.jpg" },
+    { title: "Certificate of completion on Go Crayons inc as intern.", url: "COC.jpg" },
+    { title: "Certificate of partipicipation in career proven strategies.", url: "certificateOFpart.jpg" },
+    { title: "Certificate of recognition in local level tagisan ng talino.", url: "Codefest.jpg" },
     // Add more images as needed
   ];
 
