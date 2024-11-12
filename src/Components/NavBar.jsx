@@ -37,59 +37,82 @@ const NavBar = () => {
   }, [lastScrollY]);
 
   return (
-    <motion.nav className=" 
-    text-2xl 
-    shadow-xl
-    backdrop-blur-md
-    bg-slate-900
-    bg-opacity-60
-    text-white px-8 
-    flex-grow 
-    md:px-16 
-    lg:px-24 
-    fixed
-    w-full 
-    top-0 
-    left-0 
-    z-10
-    shadow-red-700"
+    <motion.nav className="
+  shadow-xl
+  
+  w-full
+  backdrop-blur-md
+  bg-slate-900
+  bg-opacity-60
+  text-white
+  // Base (smallest screen by default - typically phones)
+  flex
+  shadow-red-700
+  p-3 // Adjust padding for smaller screens
+  text-base // Smaller text size for phones
+  // Small screens (sm breakpoint, usually 640px and up)
+  sm:p-4
+  sm:text-lg
+  // Medium screens (md breakpoint, typically 768px and up)
+  md:fixed
+  md:top-0 
+  md:left-0 
+  md:z-10
+  md:p-5
+  md:text-xl
+
+  // Extra-large screens (xl breakpoint, typically 1280px and up)
+  xl:fixed
+  xl:top-0 
+  xl:left-0 
+  xl:z-10
+  xl:p-5
+  xl:text-3xl
+"
     
     initial={{ y: 0 }}
     animate={{ y: showNavbar ? 0 : '-200%' }}
     transition={{ type: '', velocity: 2 }}
     >
-      <div className='container flex justify-between items-center'>
+      <div className=' flex-1 flex items-center  pl-10'>
         {/* Logo */}
-        <div className='text-2xl font-bold flex items-center'>
-          <img src={icon} alt="Icon" className='w-10 h-10' />
+        <div className='font-bold flex items-center'>
+          <img src={icon} alt="Icon" className='
+          
+          xl:w-50 
+          xl:h-50
+          
+          ' 
+          />
           <h1 className='ml-2'>Marrdy</h1>
         </div>
 
-        {/* Links (Hidden on small screens) */}
-        <div className='hidden md:flex space-x-6 '>
-          <a href="#About-me" className={NavButtonFont}>About me</a>
-          <a href="#Education" className={NavButtonFont}>Education</a>
-          <a href="#Experience" className={NavButtonFont}>Experience</a>
-          <a href="#Q&A" className={NavButtonFont}>Q&A</a>
-          <a href="#Gallery" className={NavButtonFont}>Gallery</a>
-        </div>
 
 
 
 
 
-        <button
-          className='md:hidden text-white focus:outline-none'
+
+
+      </div>
+      <button
+          className='md:hidden text-white focus:outline-none justify-self-end'
           onClick={toggleMenu}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-      </div>
-
+        {/* Links (Hidden on small screens) */}
+        <div className='hidden md:flex  flex-1 space-x-6  justify-self-end'>
+          <a href="#About-me" className={NavButtonFont}>About me</a>
+          <a href="#Education" className={NavButtonFont}>Education</a>
+          <a href="#Experience" className={NavButtonFont}>Experience</a>
+          <a href="#Q&A" className={NavButtonFont}>Q&A</a>
+          <a href="#Gallery" className={NavButtonFont}>Gallery</a>
+        </div>
       {/* navbar for mobile res*/}
-      <div className={`fixed top-0 left-0 w-64 h-full bg-red-800 shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
+      <div className={`fixed md:hidden top-0 left-0 w-64 h-full bg-red-800 shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
         <div className='flex justify-end p-4 bg-red-900'>
           <button
             className='text-white focus:outline-none'

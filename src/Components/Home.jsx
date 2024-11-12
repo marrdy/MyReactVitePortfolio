@@ -19,7 +19,7 @@ function Home() {
     };
 
     return (
-        <motion.div className='flex mt-28 bg-black gap-x-10'>
+        <motion.div className='flex md:mt-48 mt-10  gap-x-10 max-w-max'>
 
             <div className={isOpen ? 'fixed inset-0 w-full h-full z-50' : 'hidden'}>
                 {isOpen && (
@@ -28,10 +28,10 @@ function Home() {
             </div>
             <div className='md:w-min w-full'>
             <motion.div animate={{ x: 0 }} transition={{ duration: 2 }} initial={{ x: "-100vw" }}
-                className="shadow-red-700 shadow-2xl  text-white px-12 text-center md:mb-10 md:space-y-5 rounded-r-full md:py-10 md:pr-36 w-max bg-slate-900 md:bg-slate-900" // Changed from bg-transparent to bg-slate-900
+                className="shadow-red-700 shadow-2xl  text-white px-12 text-center md:mb-10 md:space-y-5 rounded-r-full py-10 md:pr-36 w-max bg-slate-900 md:bg-slate-900" // Changed from bg-transparent to bg-slate-900
                 id="Home"
             >
-                <h1 className="text-white text-2xl text-left md:text-4xl rounded-l-full md:bg-transparent">
+                <h1 className="text-whit  text-left rounded-l-full md:bg-transparent">
                     I'm{" "}
                     <motion.span className="text-transparent font-bold bg-clip-text bg-red-400" initial="hidden" animate="visible" transition={{ staggerChildren: 0.4, delayChildren: 3 }} aria-hidden>
                         {"Marc ".split("").map((char, index) => (
@@ -111,25 +111,25 @@ function Home() {
                 </div>
             </motion.div>
                         
-            <div className='bg-transparent visible md:hidden '>
+            <div className='bg-transparent visible md:hidden w-full'>
 
               <motion.img src ={mypic} initial={{x:"-100vw",opacity:0}} animate={{x:0,opacity:1}} transition={{duration:1, delay:1}} className=' inset-0 -z-10 h-full w-full bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#63e_100%)]'/> 
           </div>
-            <motion.div className='bg-slate-900 shadow-2xl shadow-red-700 rounded-md py-10 px-5 z-10 overflow-hidden ml-20'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
-              <h1 className='text-4xl text-slate-400 font-bold mb-8'>
+            <motion.div className='bg-slate-900 shadow-2xl shadow-red-700 rounded-md py-10 px-5 z-10 overflow-hidden md:ml-20'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
+              <h1 className=' text-slate-400 font-bold mb-8'>
                 About me 
               </h1>
               <motion.div className=' text-white'  initial={{ x: 100,opacity:0 }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1, delay:1}}>
-                    <p className='justify-center leading-relaxed text-1xl  text-1xl text-ellipsis md:text-3xl'>
+                    <p className='justify-center leading-relaxed text-ellipsis'>
                     My name is Marc Eddyson,
                     </p>
-                    <p className='justify-center leading-relaxed text-1xl  text-1xl text-ellipsis md:text-1xl  mb-10'>
+                    <p className='justify-center leading-relaxed text-ellipsis md:  mb-10'>
                     I recently graduated from EARIST GMA with a Bachelor's degree in Computer Science. During my time as a student, I gained valuable experience in programming by assisting my classmates and peers with their projects which also helped me cover my daily expenses.
                     </p>
-                    <p  className='leading-relaxed m-1 text-1xl  text-1xl text-ellipsis md:text-1xl  mb-10'>
+                    <p  className='leading-relaxed m-1 text-ellipsis md:  mb-10'>
                     While I may not yet have formal work experience, I am confident that the skills I have developed can be effectively applied in a professional environment.
                     </p>
-                    <p className='leading-relaxed m-1 text-1xl  text-1xl text-ellipsis md:text-1xl mb-10'>
+                    <p className='leading-relaxed m-1 text-ellipsis md: mb-10'>
                     I am committed to delivering results that not only meet but exceed expectations.
                     </p>
               </motion.div>
@@ -139,12 +139,12 @@ function Home() {
             <div className='relative hidden md:block ml-auto'>
   <motion.img 
     src={mypic} 
-    initial={{x:"-100vw", opacity:1}} 
+    initial={{x:"100vw", opacity:1}} 
     animate={{x:0, opacity:1}} 
     transition={{duration:1, delay:1}} 
     className='w-full'  
   />
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black bottom-0 h-1/10"></div> 
+
 </div>
         </motion.div>
     );

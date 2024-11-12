@@ -7,7 +7,7 @@ function AboutMe() {
   return (
     <div className=' text-white text-left' id="About-me">
         <div className='md:flex '   initial={{x:"100vw"}}>
-          <div className='bg-black w-screen'>
+          <div className='bg-black max-w-full'>
           <Home/>
           </div>
 
