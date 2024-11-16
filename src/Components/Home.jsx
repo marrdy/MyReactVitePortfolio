@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import Contacttab from './Contact';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from "react-type-animation";
@@ -6,8 +6,24 @@ import Resume from '../../public/Resume.pdf'
 import mypic from '../assets/Metransparent.png'
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
+    const [Showing, SetShow] = useState(false);
     const openContact = () => setIsOpen(true);
     const closeContact = () => { setIsOpen(false) };
+    const ShowMore = () => {SetShow(!Showing)};
+    const [age, setAge] = useState(0);
+
+    useEffect(() => {
+      const birthDate = new Date(2001, 3, 8); // Month is 0-indexed, so 3 = April
+      const today = new Date();
+      let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+  
+      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        calculatedAge--;
+      }
+  
+      setAge(calculatedAge);
+    }, []);
 
     const defaultAnimations = {
         hidden: {
@@ -19,16 +35,16 @@ function Home() {
     };
 
     return (
-        <motion.div className='flex md:mt-48 mt-10  gap-x-10 max-w-max'>
+        <motion.div className='flex md:mt-48 mt-10  max-w-full items-start md:mb-0 mb-32'>
 
             <div className={isOpen ? 'fixed inset-0 w-full h-full z-50' : 'hidden'}>
                 {isOpen && (
                     <Contacttab onClose={closeContact} />
                 )}
             </div>
-            <div className='md:w-min w-full'>
+            <div className='md:max-w-fit w-full'>
             <motion.div animate={{ x: 0 }} transition={{ duration: 2 }} initial={{ x: "-100vw" }}
-                className="shadow-red-700 shadow-2xl  text-white px-12 text-center md:mb-10 md:space-y-5 rounded-r-full py-10 md:pr-36 w-max bg-slate-900 md:bg-slate-900" // Changed from bg-transparent to bg-slate-900
+                className="shadow-red-700 shadow-2xl  text-white px-12 text-center md:mb-10 md:space-y-5 rounded-r-full py-10 md:pr-36 w-auto bg-slate-900 md:bg-slate-900" // Changed from bg-transparent to bg-slate-900
                 id="Home"
             >
                 <h1 className="text-whit  text-left rounded-l-full md:bg-transparent">
@@ -115,11 +131,12 @@ function Home() {
 
               <motion.img src ={mypic} initial={{x:"-100vw",opacity:0}} animate={{x:0,opacity:1}} transition={{duration:1, delay:1}} className=' inset-0 -z-10 h-full w-full bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#63e_100%)]'/> 
           </div>
-            <motion.div className='bg-slate-900 shadow-2xl shadow-red-700 rounded-md py-10 px-5 z-10 overflow-hidden md:ml-20'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
+          
+            <motion.div className='bg-slate-900 shadow-lg shadow-red-700 rounded-md py-10 px-5 z-50 overflow-hidden md:ml-20 max-w-full 2xl:text-xl lg:text-sm mx-5'   initial={{ opacity: 0,x: "50vw", }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1}}>
               <h1 className=' text-slate-400 font-bold mb-8'>
                 About me 
               </h1>
-              <motion.div className=' text-white'  initial={{ x: 100,opacity:0 }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1, delay:1}}>
+              <motion.div className=' text-white max-w-prose '  initial={{ x: 100,opacity:0 }} whileInView={{ opacity: 1,x: 0 }} transition={{duration:1, delay:1}}>
                     <p className='justify-center leading-relaxed text-ellipsis'>
                     My name is Marc Eddyson,
                     </p>
@@ -132,11 +149,58 @@ function Home() {
                     <p className='leading-relaxed m-1 text-ellipsis md: mb-10'>
                     I am committed to delivering results that not only meet but exceed expectations.
                     </p>
+
               </motion.div>
+              {Showing&&(
+                <div className='
+                2xl:text-4xl
+                xl:text-3xl
+                font-bold
+                space-y-5
+                '>
+                    <h1>Demographic data</h1>
+                    <div className='
+                    2xl:text-2xl
+                    xl:text-lg
+                    font-bold
+                    space-y-7
+                    '>
+                        
+                        <h2>First Name : <span className='underline'>Marc Eddyson</span></h2>
+                        <h2>Last Name :<span className='underline'> Cruz</span></h2>
+                        <h2>Middle Name :<span className='underline'> Valles</span></h2>
+                        <h2>Age : <span className='underline'>{age} </span></h2>
+                    </div>
+                    <h1>Educational attainments</h1>
+                    <div className='
+                    2xl:text-2xl
+                    xl:text-lg
+                    font-bold
+                    '>
+                        
+                        <h2>Milagrosa Elementary School</h2>
+                        <h3 className='text-sm mb-5 underline'>2006-2009</h3>
+                        <h2>Beatitude Carmona</h2>
+                        <h3 className='text-sm mb-5 underline'>2009-2012</h3>
+                        <h2>Saint Gabriel</h2>
+                        <h3 className='text-sm mb-5 underline'>2012-2013</h3>
+                        <h2>Carmona National Highschool</h2>
+                        <h3 className='text-sm mb-5 underline'>2013-2017</h3>
+                        <h2>STI Southwoods</h2>
+                        <h3 className='text-sm mb-5 underline'>2017-2019</h3>
+                        <h2>EARIST Cavite</h2>
+                        <h3 className='text-sm mb-5 underline'>2019-2024</h3>
+
+                    </div>
+                    
+                </div>
+
+              )}
+              <button className='bg-red-900 p-3 z-50 rounded-xl my-5' onClick={ShowMore}> {Showing?<h1>Less...</h1>:<h1>More...</h1>}</button>
           </motion.div>
             </div>
             
-            <div className='relative hidden md:block ml-auto'>
+            <div className='relative hidden md:block ml-auto -z-0'>
   <motion.img 
     src={mypic} 
     initial={{x:"100vw", opacity:1}} 
@@ -144,7 +208,7 @@ function Home() {
     transition={{duration:1, delay:1}} 
     className='w-full'  
   />
-
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black bottom-0 h-1/10"></div> 
 </div>
         </motion.div>
     );

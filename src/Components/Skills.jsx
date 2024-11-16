@@ -72,13 +72,13 @@ export default function Skills() {
     <div className=' bg-black flex-col' id="Skills">
       <h1 className="text-4xl font-bold text-center text-white">Skills & knowledge</h1>
       <div className=" py-10">
-            <div className="flex flex-wrap justify-center gap-6 ">
+            <div className="flex flex-wrap justify-center gap-6 2xl:mx-40 ">
                 {
                     // Loop through the Exps object using Object.entries()
                     Object.entries(Exps).map(([filename, details], index) => (
                         <div 
                             key={index} 
-                            className="w-48 h-60 bg-slate-900 rounded-lg flex flex-col items-center justify-center p-4"
+                            className="w-48 h-60 bg-slate-900 rounded-lg flex flex-col items-center justify-center p-10 transition-transform transform hover:scale-110 hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] duration-300"
                         >
                             {/* Pass filename to IconLoader */}
                             <IconLoader filename={filename} />
@@ -88,7 +88,7 @@ export default function Skills() {
                 }
             </div>
         </div>
-        <div  className='space-y-7'>
+        <div  className='space-y-7 2xl:mx-40'>
         {skillsInfo.map((item, index) => (
         <div key={index}>
           <SkillRate title={item.title} rate={item.rate} proficiencyLevel={item.proficiencyLevel} description={item.description} opinion={item.opinion} />

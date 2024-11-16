@@ -66,8 +66,8 @@ const NavBar = () => {
   xl:top-0 
   xl:left-0 
   xl:z-10
-  xl:p-5
-  xl:text-3xl
+  xl:p-2
+  xl:text-2xl
 "
     
     initial={{ y: 0 }}
@@ -104,9 +104,8 @@ const NavBar = () => {
           </svg>
         </button>
         {/* Links (Hidden on small screens) */}
-        <div className='hidden md:flex  flex-1 space-x-6  justify-self-end'>
+        <div className='hidden md:flex text-center flex-1 space-x-6  justify-self-end'>
           <a href="#About-me" className={NavButtonFont}>About me</a>
-          <a href="#Education" className={NavButtonFont}>Education</a>
           <a href="#Experience" className={NavButtonFont}>Experience</a>
           <a href="#Q&A" className={NavButtonFont}>Q&A</a>
           <a href="#Gallery" className={NavButtonFont}>Gallery</a>
@@ -127,7 +126,6 @@ const NavBar = () => {
           
           <a href="#Home" className={NavButtonFont} onClick={toggleMenu}>Home</a>
           <a href="#About-me" className={NavButtonFont} onClick={toggleMenu}>About me</a>
-          <a href="#Education" className={NavButtonFont} onClick={toggleMenu}>Education</a>
           <a href="#Experience" className={NavButtonFont} onClick={toggleMenu}>Experience</a>
           <a href="#Skills" className={NavButtonFont} onClick={toggleMenu}>Contact me</a>
         </div>

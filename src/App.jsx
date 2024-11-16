@@ -2,7 +2,6 @@ import { useState } from 'react'
 import NavBar from './Components/NavBar'
 import { motion } from 'framer-motion';
 import Aboutme from './Components/AboutMe'
-import Edu from './Components/Education'
 import bg from './assets/circuit-board.svg'
 import Skills from './Components/Skills'
 import QnA from './Components/QNA'
@@ -28,7 +27,6 @@ function App() {
       <NavBar/> 
       <div className='overflow-hidden '>
         <Aboutme/>
-        <Edu/>
         <Skills/>
         <QnA/>
         <Gallery/>
