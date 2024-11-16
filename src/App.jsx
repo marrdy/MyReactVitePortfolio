@@ -16,14 +16,8 @@ function App() {
           < motion.div className='fixed w-full h-full bg-black z-10 justify-center' animate={{opacity:0,visibility:'hidden'}} transition={{duration:1.5}}>
 
     </motion.div>
-      <div className='absolute -z-50 flex-grow' 
-      style={{
-      backgroundImage: ` url('src/assets/circuit-board.svg')`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}
-    > 
+
+    
       <NavBar/> 
       <div className='overflow-hidden '>
         <Aboutme/>
@@ -34,7 +28,7 @@ function App() {
       </div>
 
     </div>
-    </div>
+   
 
            
 
