@@ -35,7 +35,7 @@ function Home() {
     };
 
     return (
-        <motion.div className='flex md:mt-48 mt-10  max-w-full items-start md:mb-0 mb-32'>
+        <motion.div className='flex md:pt-48 pt-10  max-w-full items-start md:mb-0 mb-32'>
 
             <div className={isOpen ? 'fixed inset-0 w-full h-full z-50' : 'hidden'}>
                 {isOpen && (
